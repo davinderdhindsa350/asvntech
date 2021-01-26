@@ -10,7 +10,7 @@
 			el.each(function() {
 				var $this = $(this),
 					inner = $this.find('.circle_progress_inner'),
-					percentage = $this.attr('data-percentage') + '%';
+					percentage = $this.attr('data-percentage') ;
 				if ($this.hasClass('circular')) {
                     var dataparcent = $this.attr('data-percentage');
 					var progress = inner.circleProgress({
@@ -26,7 +26,7 @@
 							gradientAngle: Math.PI * 3.501411705537642
 						}
 					}).on('circle-animation-progress', function(event, progress) {
-                $(this).find('strong').html(Math.round(dataparcent * progress) + '<i>%</i>');
+                
               });
 					progress.on('circle-animation-progress', function(e, p, v) {
 						var progressBarInner = $(this),
