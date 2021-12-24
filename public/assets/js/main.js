@@ -60,8 +60,12 @@
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		asNavFor: '.slider-for',
+		autoplay: true,
+    autoplaySpeed: 2000,
 		dots: true,
-		focusOnSelect: true
+		focusOnSelect: true,
+		prevArrow: '',
+		nextArrow: ''
 	  });
 	$('.screenshot-wrap').slick({
 		autoplay: true,
