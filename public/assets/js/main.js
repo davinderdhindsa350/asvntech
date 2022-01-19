@@ -100,8 +100,8 @@
 		loop:true,
 		dots: true,
 		mouseDrag: false,
-		autoplay: false,
-		autoplayTimeout:4000,
+		autoplay: true,
+		autoplayTimeout:1500,
 		nav: false,
 		items: 1,
 	});
@@ -207,3 +207,90 @@
 	new WOW().init();
 
 }(jQuery));
+
+function getBase64(file) {
+	return new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = () => resolve(reader.result);
+		reader.onerror = error => reject(error);
+	});
+}
+function sendMail() {
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var contact = document.getElementById("contact1").value;
+	var attachment = document.getElementById("attachment").files.item(0)
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if (name == '' || name == null || name == undefined) {
+		alert("Name should not be empty");
+		return;
+	}
+	if (email == '' || email == null || email == undefined) {
+		alert("Email should not be empty!!");
+		return;
+	}
+	if (email.length < 1 || !email.match(mailformat)) {
+		alert("Invalid Email !!");
+		return;
+	}
+	if (contact == null || contact == '' || contact == undefined) {
+		alert("Contact number should not be empty!!");
+		return;
+	}
+	if (contact.match(/\d/g) == null || contact.match(/\d/g).length != 10) {
+		alert("Invalid Contact Number !!");
+		return;
+	}
+	debugger;
+	if (attachment != null) {
+		
+		getBase64(attachment).then(
+			data => {
+				Email.send({
+					Host: "smtp.gmail.com",
+					Username: "davinderdhindsa356@gmail.com",
+					Password: "@Dhindsa248",
+					To: 'info@asvntech.com, sales@asvntech.com,davinderdhindsa350@gmail.com',
+					From: "davinderdhindsa356@gmail.com",
+					Subject: "Client Request ASVN Tech website",
+					Body: "Client Name :  " + document.getElementById("name").value + " <br/>Email: " + document.getElementById("email").value + "<br/>Contact : " + document.getElementById("contact1").value + "<br/>Message :" + document.getElementById("message").value,
+		
+					Attachments: [
+						{
+							name: attachment.name,
+							data: data
+						}]
+				}
+				).then(
+					message => {
+						if (message == "OK")
+							alert("Thanks we will connect you soon.")
+						else
+							alert("Please send mail to info@asvntech.com . Sorry due to some System error not able to save details")
+					}
+				)
+			}
+		);
+		
+	}
+	else {
+
+		Email.send({
+			Host: "smtp.gmail.com",
+			Username: "davinderdhindsa356@gmail.com",
+			Password: "@Dhindsa248",
+			To: 'info@asvntech.com, sales@asvntech.com,davinderdhindsa350@gmail.com',
+			From: "davinderdhindsa356@gmail.com",
+			Subject: "Client Request ASVN Tech website",
+			Body: "Client Name :  " + document.getElementById("name").value + " <br/>Email: " + document.getElementById("email").value + "<br/>Contact : " + document.getElementById("contact1").value + "<br/>Message :" + document.getElementById("message").value
+		}).then(
+			message => {
+				if (message == "OK")
+					alert("Thanks we will connect you soon.")
+				else
+					alert("Please send mail to info@asvntech.com . Sorry due to some System error not able to save details")
+			}
+		)
+	}
+}

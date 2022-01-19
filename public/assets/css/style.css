@@ -544,7 +544,7 @@ input::-webkit-input-placeholder {
 /*--------------------------------------
 ---------- VIDEO AREA CSS START --------
 ---------------------------------------*/
-.video-area {
+/* .video-area {
     background: url(../img/video-overview.jpg) no-repeat center / cover;
     position: relative;
 	background-attachment: fixed;
@@ -559,9 +559,9 @@ input::-webkit-input-placeholder {
     left: 0;
     width: 100%;
     height: 100%;
-	background: #000529; /* Old browsers */
-	background: -moz-linear-gradient(left, #000529 1%, #002055 24%, #005db5 67%, #0074d9 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(left, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%); /* Chrome10-25,Safari5.1-6 */
+	background: #000529; 
+	background: -moz-linear-gradient(left, #000529 1%, #002055 24%, #005db5 67%, #0074d9 100%);
+	background: -webkit-linear-gradient(left, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%); aaaaaa
 	background: linear-gradient(to right, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%);
     opacity: 0.85;
     z-index: -1;
@@ -598,7 +598,7 @@ input::-webkit-input-placeholder {
 }
 .video-popup i:hover::before {
     background: transparent;
-}
+} */
 /*--------------------------------------
 ----------- VIDEO AREA CSS END ---------
 ---------------------------------------*/
@@ -1048,9 +1048,6 @@ h4.post-title a {
 /*---------------------------------------
 ----- MAP AND FOOTER AREA CSS START -----
 ---------------------------------------*/
-.google-map {
-    height: 450px;
-}
 .footer {
     background: url(../img/footer-bg.jpg) no-repeat center / cover;
     position: relative;
