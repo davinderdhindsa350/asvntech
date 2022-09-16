@@ -248,9 +248,7 @@ function sendMail() {
 		getBase64(attachment).then(
 			data => {
 				Email.send({
-					Host: "smtp.gmail.com",
-					Username: "davinderdhindsa356@gmail.com",
-					Password: "@Dhindsa248",
+					SecureToken : "8a33aba9-3f45-4cbf-ae93-01cdf12caff9",
 					To: 'info@asvntech.com, sales@asvntech.com,davinderdhindsa350@gmail.com',
 					From: "davinderdhindsa356@gmail.com",
 					Subject: "Client Request ASVN Tech website",
@@ -277,9 +275,7 @@ function sendMail() {
 	else {
 
 		Email.send({
-			Host: "smtp.gmail.com",
-			Username: "davinderdhindsa356@gmail.com",
-			Password: "@Dhindsa248",
+			SecureToken : "8a33aba9-3f45-4cbf-ae93-01cdf12caff9",
 			To: 'info@asvntech.com, sales@asvntech.com,davinderdhindsa350@gmail.com',
 			From: "davinderdhindsa356@gmail.com",
 			Subject: "Client Request ASVN Tech website",
