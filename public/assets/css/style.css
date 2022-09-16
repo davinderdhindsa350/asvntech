@@ -271,7 +271,6 @@ textarea:focus {
 	border-radius: 15px;
     padding: 6px 25px;
     display: inline-block;
-    text-transform: uppercase;
 	cursor: pointer;
 	font-weight: 500;
 }
@@ -331,7 +330,7 @@ input::-webkit-input-placeholder {
 }
 .mainmenu li {
     display: inline-block;
-    text-transform: uppercase;
+   
 }
 .mainmenu li a {
     display: inline-block;
