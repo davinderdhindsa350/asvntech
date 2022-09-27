@@ -238,10 +238,12 @@ function sendMail() {
 		alert("Contact number should not be empty!!");
 		return;
 	}
+	/*----------------------------
 	if (contact.match(/\d/g) == null || contact.match(/\d/g).length != 10) {
 		alert("Invalid Contact Number !!");
 		return;
 	}
+	----------------------------*/
 	debugger;
 	if (attachment != null) {
 		
